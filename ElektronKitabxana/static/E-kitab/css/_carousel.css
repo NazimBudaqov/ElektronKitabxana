@@ -1,0 +1,19 @@
+.container1 {
+    padding-left: 0%;
+    padding: 0%;
+    padding-right: 0%;
+    padding-top: 0%;
+    padding-bottom: 0%;
+}
+.carousel-item{ 
+    height:510px;
+}
+
+.carouselExampleIndicators{
+    height: 600px;
+    border: 2px solid black;
+}
+
+.active {
+    border: 2px solid black;
+}

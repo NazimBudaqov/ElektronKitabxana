@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Kitablar {% endblock %}
+
+{% block css_files %}
+        <link rel="stylesheet" href="{% static 'E-kitab/css/_book-card.css' %}">
+{% endblock %}
+
+{% block block1 %}
+        <div class="col-3 ">
+                {% include '_partials/_categories.html' %}
+
+                <div class="list-group mt-3">
+                        {% include '_partials/_authors.html' %}  
+                </div>
+        </div>
+{% endblock block1 %}
+
+{% block content %}
+
+        <h1 style="text-align: center; border:2px solid black; border-radius: 10px;">Kitablar</h1>
+
+        <!-- Butun kitablarin siyahisi -->
+        <div class="row">
+                
+                {% if books|length > 0 %}
+                        {% for book in books %}
+                        {% include '_partials/_book-card.html' %}
+                        {% endfor %}
+                {% else %}
+                        <div class="alert alert-warning">Kitab Yoxdur</div>
+                {% endif %}
+                
+        </div>
+       
+{% endblock %} 
+

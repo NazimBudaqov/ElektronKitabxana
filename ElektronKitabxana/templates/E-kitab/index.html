@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %} 
+        <link rel="stylesheet" href="{% static 'E-kitab/css/_carousel.css' %}" media="screen" >
+{% endblock %}
+
+{% block title %} Home {% endblock %}
+
+{% block block1 %}
+        <div class="col-3 ">
+                {% include '_partials/_categories.html' %}
+
+                <div class="list-group mt-3">
+                        {% include '_partials/_authors.html' %}  
+                </div>
+        </div>
+{% endblock block1 %}
+
+{% block content %}
+                
+        {% include '_partials/_carousel.html' %}
+        
+{% endblock %}
+
+{% block js_files %} 
+        <script src="{% static 'E-kitab/js/script.js' %}"></script>
+        <script src="{% static 'E-kitab/js/flickity.pkgd.min.js' %}"></script>
+{% endblock %}

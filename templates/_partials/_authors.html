@@ -1,0 +1,10 @@
+<p class="list-group-item tab1 bg-dark mb-0" style="color:white"><i class="fa-solid fa-pen"></i>       Yazıçılar</p>
+ 
+ {% for author in authors %} 
+    {% if author.slug == selected_author %}
+        <a href="{% url 'books_by_author' author.slug %}" class="list-group-item list-group-item-action active">{{ author.name|title }} {{ author.lastName|title }}</a>
+    {% else %}
+        <a href="{% url 'books_by_author' author.slug %}" class="list-group-item list-group-item-action">{{ author.name|title }} {{ author.lastName|title }}</a>
+    {% endif %}
+{% endfor %}
+     

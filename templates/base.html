@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang='tr'>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-eqiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}"> 
+        {% comment %} Demeli bele:
+        burda base.css faylini bootstrap.min.css faylindan sonra qeyd etmelisen ki, 
+        mubahise elemesinler ve override olsun ki base.css fayli islesin
+        {% endcomment %}
+        
+        {% block css_files %}{% endblock %}
+
+        <title>{% block title %} {% endblock %} | Elektron Kitabxana </title>
+        <script src="https://kit.fontawesome.com/c62b32b5f2.js" crossorigin="anonymous"></script>    
+
+    <body>
+        {% include '_partials/_navbar.html' %}
+        
+        
+        <div class='container mt-3 mx-5'>
+            
+            <div class="row">
+                
+                {% block block1 %}
+                
+                {% endblock block1 %}
+                    
+                
+                <!-- Her pencerenin ozunun mezmunu -->
+                <div class="col-9">
+                    <div class="container">
+                        {% block content %} <!-- narahat olma duz yazmisan))-->
+                        {% endblock %} 
+                    </div>
+                </div> 
+
+                
+            </div>
+        </div>
+
+        
+
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/popper.min.js' %}"></script>
+        <script src="{% static 'js/base.js' %}"></script>
+        {% block js_files %} {% endblock %}
+
+    </body>
+</html>

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} {{ book.title }} {% endblock %}
+
+{% block content %}
+
+<style>
+  img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+}
+</style>
+
+  <div class="row bg-dark text-white mx-5 " style="position: absolute; border: 3px gray solid; padding: 3%; border-radius: 15px 50px 30px 5px;">
+
+    <!-- image -->
+    <div class="col-3 px-0">
+      <img class="border" src="{{ book.image.url }}" alt="" >
+      <br><br>
+      <!-- title & author -->
+      <h4>
+        <figcaption>
+          {{ book.title }}
+        </figcaption>
+      </h4>
+      
+      {% if book.author.middleName == None %}
+        <span class="author" style="font-style:italic;">{{ book.author.name }} {{ book.author.lastName }}</span>
+      {% else %}
+        <span class="author" style="font-style:italic;">{{ book.author.name }} {{ book.author.middleName }} {{ book.author.lastName }}</span>
+      {% endif %}
+        
+      <!-- pdf duymesi -->
+      <div class="continer">
+        <br><br>
+        <p>
+          <a href="{% static 'docs/'|add:book.pdf %}">
+            <button style="font-size:24px">PDF yukle <i class="fa fa-download"></i></button>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- description -->
+    <div class="col-9" style="text-align: justify; font-family: calibri;">
+      <p>
+        {{ book.description }}
+        <hr>
+      </p>
+      <br>
+      <!-- reytinq & kateqoriya -->
+      <div class="continer" style="text-align: center; font-size: larger;">
+        <p>
+          <span style="margin-right: 3px; font-style: italic; ">
+            Kitabın reytinqi: {{ book.reyting }}<br> Kateqoriya: {{ book.category }}
+          </span>  
+        </p>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+{% endblock %} 

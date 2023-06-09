@@ -1,0 +1,11 @@
+
+<div class="list-group ">
+        <p class="list-group-item tab1 bg-dark mb-0" style="color:white"><i class="fa-solid fa-bars"></i> Kateqoriyalar</p>
+        {% for category in categories %}
+                {% if category.slug == selected_category %}
+                        <a href="{% url 'books_by_category' category.slug %}" class="list-group-item list-group-item-action active">{{ category.name|title }}</a>
+                {% else %}
+                        <a href="{% url 'books_by_category' category.slug %}" class="list-group-item list-group-item-action">{{ category.name|title }}</a>
+                {% endif %}
+        {% endfor %}
+</div>

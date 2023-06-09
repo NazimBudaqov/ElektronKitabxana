@@ -1,0 +1,22 @@
+
+body {
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+}
+
+  .form_button:hover{
+    color: white;
+    background:blue;
+}
+  
+  .form_button{
+    color:white;
+    border-color: blue;
+    margin-left: 3px;
+}
+
+
+/* Menalari: */
+/* Link is the normal appearance, hover is when you mouse over, 
+active is the state when it's clicked, focus follows active and 
+visited is the state you end up when you unfocus the recently clicked link.*/

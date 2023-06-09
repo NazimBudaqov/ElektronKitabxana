@@ -1,0 +1,48 @@
+{% load static %}
+
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+
+      <div class="carousel-item active bg-dark text-white" style="border-radius: 10px;">
+        
+          <h1 style="text-align: center; margin-top: 25%;">Kitab sayı: {{ books|length }} </h1> <!--YESSS-->
+          <div class="row">
+            <div class="col-1" style="margin-left: 38%;">
+              <button class="btn bg-primary"  type="submit">
+                <a class="text-white" style="text-decoration:none;" href="{% url 'login' %}">Giriş</a>
+              </button>
+            </div>
+            <div class="col-2" >
+              <button class="btn text-white bg-primary" type="submit"><a class="text-white" style="text-decoration:none;" href="../books">Bütün Kitablar</a></button>
+            </div>
+          </div>
+      </div>
+
+      <div class="carousel-item bg-dark" style="border-radius: 10px;">
+        <div class="container container1" >
+        <img src="{% static 'E-kitab/images/1.jpg' %}" style="height: fit-content; width: fit-content;" class="d-block w-100" style="position: relative;" alt="...">
+        </div>
+      </div>
+
+      <div class="carousel-item bg-dark" style="border-radius: 10px;">
+        <div class="container container1">
+        <img src="{% static 'E-kitab/images/3.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+      </div>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div> 
